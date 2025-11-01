@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Ulang Tahun Alyaaa 💞</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background: linear-gradient(to bottom, #ffd6eb, #ffe6f3);
+      font-family: 'Pacifico', cursive;
+      color: #d63384;
+      overflow: hidden;
+    }
+    h1 {
+      margin-top: 80px;
+      font-size: 2em;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    p {
+      font-size: 1.1em;
+      width: 80%;
+      margin: 20px auto;
+      line-height: 1.5em;
+      color: #b80f6a;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 25px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    button:hover {
+      background-color: #ff85c1;
+    }
+    .heart {
+      position: fixed;
+      top: -10px;
+      font-size: 24px;
+      animation: fall linear forwards;
+      z-index: 9999;
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/07/29/audio_1e23efde2b.mp3" type="audio/mpeg">
+  </audio>
+
+  <h1>Selamat Ulang Tahun Alyaaa 💞</h1>
+  <p id="message"></p>
+  <button onclick="spawnHearts()">cieee senyum ya 😆</button>
+
+  <script>
+    const message = "Selamaaattt ulangg tahunn yaaaa, semogaa dii panjangkann umurnyaa, sehatt selaluu, jangann sakitt sakitt yaa hehehe, rajinn shalatt dan mengajiii, menjadii orangg yangg lebihh bijaksanaa, bisaa berfikir kritis, dann dii berkahkann hidupnyaa selaluuu, akuu mauu bilangg, yaaa kitaa gakk tauu rencanaa Allah, tapii mudahh mudahan kitaaa lahh yangg dii rencanakann Allah, semogaa dengann bertambah nyaa umurr inii, bisaa buatt kamuu jadii lebihh bijakk dalamm mengambil keputusan, satuu lagii, maaff kalauu cumaa ini yangg akuu bisaa lakukann untukk harii kamuu yang istimewa iniii, sejujurnyaaa, akuu mauu yang lebihh darii inii, tapii kitaa jauhh bangett yaaa, hehehe 😄  hbd yaaa🎉";
+    let i = 0;
+    function typeMessage() {
+      if (i < message.length) {
+        document.getElementById("message").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeMessage, 60);
+      }
+    }
+    typeMessage();
+
+    function spawnHearts() {
+      for (let j = 0; j < 20; j++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerText = "💗";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 5000);
+      }
+    }
+  </script>
+</body>
+  </html>
